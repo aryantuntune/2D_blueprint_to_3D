@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Project specific
+Data/
+Target/
+*.blend
+*.blend1
+furniture_temp/
+furniture_pack.zip
+test_import.blend
+
+# Windows
+nul
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.claude/settings.local.json

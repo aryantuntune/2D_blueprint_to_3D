@@ -1,0 +1,412 @@
+Microsoft Windows [Version 10.0.26200.6901]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>C:/Users/vaibh/Downloads/2d_blueprint_to_3d_model-main/venv/Scripts/activate.bat
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install -r requirements.txt
+ERROR: Ignored the following yanked versions: 3.4.11.39, 3.4.17.61, 4.4.0.42, 4.4.0.44, 4.5.4.58, 4.5.5.62, 4.7.0.68
+ERROR: Could not find a version that satisfies the requirement opencv-python==4.2.0.34 (from versions: 3.4.0.14, 3.4.10.37, 3.4.11.41, 3.4.11.43, 3.4.11.45, 3.4.13.47, 3.4.15.55, 3.4.16.57, 3.4.16.59, 3.4.17.63, 3.4.18.65, 4.3.0.38, 4.4.0.40, 4.4.0.46, 4.5.1.48, 4.5.3.56, 4.5.4.60, 4.5.5.64, 4.6.0.66, 4.7.0.72, 4.8.0.74, 4.8.0.76, 4.8.1.78, 4.9.0.80, 4.10.0.82, 4.10.0.84, 4.11.0.86, 4.12.0.88)
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+ERROR: No matching distribution found for opencv-python==4.2.0.34
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install -r requirements.txt
+ERROR: Ignored the following yanked versions: 3.4.11.39, 3.4.17.61, 4.4.0.42, 4.4.0.44, 4.5.4.58, 4.5.5.62, 4.7.0.68
+ERROR: Could not find a version that satisfies the requirement opencv-python==4.2.0.34 (from versions: 3.4.0.14, 3.4.10.37, 3.4.11.41, 3.4.11.43, 3.4.11.45, 3.4.13.47, 3.4.15.55, 3.4.16.57, 3.4.16.59, 3.4.17.63, 3.4.18.65, 4.3.0.38, 4.4.0.40, 4.4.0.46, 4.5.1.48, 4.5.3.56, 4.5.4.60, 4.5.5.64, 4.6.0.66, 4.7.0.72, 4.8.0.74, 4.8.0.76, 4.8.1.78, 4.9.0.80, 4.10.0.82, 4.10.0.84, 4.11.0.86, 4.12.0.88)
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+ERROR: No matching distribution found for opencv-python==4.2.0.34
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install -r requirements.txt
+ERROR: Ignored the following yanked versions: 3.4.11.39, 3.4.17.61, 4.4.0.42, 4.4.0.44, 4.5.4.58, 4.5.5.62, 4.7.0.68
+ERROR: Could not find a version that satisfies the requirement opencv-python==4.2.0.34 (from versions: 3.4.0.14, 3.4.10.37, 3.4.11.41, 3.4.11.43, 3.4.11.45, 3.4.13.47, 3.4.15.55, 3.4.16.57, 3.4.16.59, 3.4.17.63, 3.4.18.65, 4.3.0.38, 4.4.0.40, 4.4.0.46, 4.5.1.48, 4.5.3.56, 4.5.4.60, 4.5.5.64, 4.6.0.66, 4.7.0.72, 4.8.0.74, 4.8.0.76, 4.8.1.78, 4.9.0.80, 4.10.0.82, 4.10.0.84, 4.11.0.86, 4.12.0.88)
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+ERROR: No matching distribution found for opencv-python==4.2.0.34
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install opencv-python==4.5.5.64
+Collecting opencv-python==4.5.5.64
+  Downloading opencv_python-4.5.5.64-cp36-abi3-win_amd64.whl.metadata (18 kB)
+Collecting numpy>=1.21.2 (from opencv-python==4.5.5.64)
+  Downloading numpy-2.3.4-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Downloading opencv_python-4.5.5.64-cp36-abi3-win_amd64.whl (35.4 MB)
+   ━━━━━━━━━━━━━━━━━━ 35.4/35.4 MB 6.8 MB/s eta 0:00:00
+Downloading numpy-2.3.4-cp312-cp312-win_amd64.whl (12.8 MB)
+   ━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 6.9 MB/s eta 0:00:00
+Installing collected packages: numpy, opencv-python
+Successfully installed numpy-2.3.4 opencv-python-4.5.5.64
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install -r requirements.txt --no-deps
+ERROR: Ignored the following yanked versions: 3.4.11.39, 3.4.17.61, 4.4.0.42, 4.4.0.44, 4.5.4.58, 4.5.5.62, 4.7.0.68
+ERROR: Could not find a version that satisfies the requirement opencv-python==4.2.0.34 (from versions: 3.4.0.14, 3.4.10.37, 3.4.11.41, 3.4.11.43, 3.4.11.45, 3.4.13.47, 3.4.15.55, 3.4.16.57, 3.4.16.59, 3.4.17.63, 3.4.18.65, 4.3.0.38, 4.4.0.40, 4.4.0.46, 4.5.1.48, 4.5.3.56, 4.5.4.60, 4.5.5.64, 4.6.0.6ERRERRERROR: No matching distribuERROR: No matching distribution fERROR: No matching distribution found for opencv-python==4.2.0.34
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install opencv-python==4.5.5.64
+Requirement already satisfied: opencv-python==4.5.5.64 in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (4.5.5.64)
+Requirement already satisfied: numpy>=1.21.2 in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (from opencv-python==4.5.5.64) (2.3.4)
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py
+RuntimeError: module compiled against ABI version 0x1000009 but this version of numpy is 0x2000000
+Traceback (most recent call last):
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\main.py", line 2, in <module>
+    from FloorplanToBlenderLib import (
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\IO.py", line 5, in <module>
+    import cv2
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\venv\Lib\site-packages\cv2\__init__.py", line 8, in <module>
+    from .cv2 import *
+ImportError: numpy.core.multiarray failed to import
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install --upgrade pip setuptools wheel
+Requirement already satisfied: pip in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (25.0.1)
+Collecting pip
+  Downloading pip-25.2-py3-none-any.whl.metadata (4.7 kB)
+Collecting setuptools
+  Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting wheel
+  Downloading wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+Downloading pip-25.2-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 2.8 MB/s eta 0:00:00
+Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 8.6 MB/s eta 0:00:00
+Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+ERROR: To modify pip, please run the following command:
+C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\venv\Scripts\python.exe -m pip install --upgrade pip setuptools wheel
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip uninstall -y numpy opencv-python opencv-contrib-python  
+Found existing installation: numpy 2.3.4
+Uninstalling numpy-2.3.4:
+  Successfully uninstalled numpy-2.3.4
+Found existing installation: opencv-python 4.5.5.64
+Uninstalling opencv-python-4.5.5.64:
+  Successfully uninstalled opencv-python-4.5.5.64
+WARNING: Skipping opencv-contrib-python as it is not installed.
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install "numpy<2.0" opencv-python==4.9.0.80 opencv-contrib-python==4.9.0.80
+Collecting numpy<2.0
+  Downloading numpy-1.26.4-cp312-cp312-win_amd64.whl.metadata (61 kB)
+Collecting opencv-python==4.9.0.80
+  Downloading opencv_python-4.9.0.80-cp37-abi3-win_amd64.whl.metadata (20 kB)
+Collecting opencv-contrib-python==4.9.0.80
+  Downloading opencv_contrib_python-4.9.0.80-cp37-abi3-win_amd64.whl.metadata (20 kB)
+Downloading opencv_python-4.9.0.80-cp37-abi3-win_amd64.whl (38.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 6.9 MB/s eta 0:00:00
+Downloading opencv_contrib_python-4.9.0.80-cp37-abi3-win_amd64.whl (45.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.3/45.3 MB 6.4 MB/s eta 0:00:00
+Downloading numpy-1.26.4-cp312-cp312-win_amd64.whl (15.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.5/15.5 MB 7.9 MB/s eta 0:00:00
+Installing collected packages: numpy, opencv-python, opencv-contrib-python
+Successfully installed numpy-1.26.4 opencv-contrib-python-4.9.0.80 opencv-python-4.9.0.80
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py                                            
+Traceback (most recent call last):
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\main.py", line 2, in <module>
+    from FloorplanToBlenderLib import (
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\IO.py", line 11, in <module>
+    from . import image
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\image.py", line 3, in <module>       
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install numpy<2.0 Pillow opencv-python==4.9.0.80 opencv-contrib-python==4.9.0.80 matplotlib configparser
+The system cannot find the file specified.
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install Pillow
+Collecting Pillow
+  Downloading pillow-12.0.0-cp312-cp312-win_amd64.whl.metadata (9.0 kB)
+Downloading pillow-12.0.0-cp312-cp312-win_amd64.whl (7.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 7.8 M
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2  
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install Pillow
+Requirement already satisfied: Pillow in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (12.0.0)
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2  
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py                                            
+in\main.py", line 2, in <module>
+in\main.py", line 2, in <module>
+    from FloorplanToBlenderLib import (
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\execution.py", line 1, in <module>
+    from . import generate
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\generate.py", line 6, in <module>
+    from FloorplanToBlenderLib.generator import Door, Floor, Room, Wall, Window
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\generator.py", line 10, in <module>
+    from . import draw
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\draw.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install matplotlib
+Collecting matplotlib
+  Downloading matplotlib-3.10.7-cp312-cp312-win_amd64.whl.metadata (11 kB)
+Collecting contourpy>=1.0.1 (from matplotlib)
+  Using cached contourpy-1.3.3-cp312-cp312-win_amd64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib)
+  Downloading fonttools-4.60.1-cp312-cp312-win_amd64.whl.metadata (114 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib)
+  Using cached kiwisolver-1.4.9-cp312-cp312-win_amd64.whl.metadata (6.4 kB)
+Requirement already satisfied: numpy>=1.23 in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (from matplotlib) (1.26.4)      
+Collecting packaging>=20.0 (from matplotlib)
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: pillow>=8 in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (from matplotlib) (12.0.0)        
+Collecting pyparsing>=3 (from matplotlib)
+  Downloading pyparsing-3.2.5-py3-none-any.whl.metadata (5.0 kB)
+Collecting python-dateutil>=2.7 (from matplotlib)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading matplotlib-3.10.7-cp312-cp312-win_amd64.whl (8.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 10.3 MB/s eta 0:00:00  
+Using cached contourpy-1.3.3-cp312-cp312-win_amd64.whl (226 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.60.1-cp312-cp312-win_amd64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 7.5 MB/s eta 0:00:00   
+Using cached kiwisolver-1.4.9-cp312-cp312-win_amd64.whl (73 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Downloading pyparsing-3.2.5-py3-none-any.whl (113 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, pyparsing, packaging, kiwisolver, fonttools, cycler, contourpy, python-dateutil, matplotlib
+Successfully installed contourpy-1.3.3 cycler-0.12.1 fonttools-4.60.1 kiwisolver-1.4.9 matplotlib-3.10.7 packaging-25.0 pyparsing-3.2.5 python-dateutil-2.9.0.post0 six-1.17.0
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py  
+Traceback (most recent call last):
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\main.py", line 2, in <module>
+    from FloorplanToBlenderLib import (
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\execution.py", line 3, in <module>
+    from scipy.spatial.transform import Rotation as R
+ModuleNotFoundError: No module named 'scipy'
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install scipy
+Collecting scipy
+  Downloading scipy-1.16.2-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Requirement already satisfied: numpy<2.6,>=1.25.2 in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (from scipy) (1.26.4)    
+Downloading scipy-1.16.2-cp312-cp312-win_amd64.whl (38.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 6.7 MB/s eta 0:00:00 
+Installing collected packages: scipy
+Successfully installed scipy-1.16.2
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install scipy
+Requirement already satisfied: scipy in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (1.16.2)
+Requirement already satisfied: numpy<2.6,>=1.25.2 in c:\users\vaibh\downloads\2d_blueprint_to_3d_model-main\venv\lib\site-packages (from scipy) (1.26.4)    
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py  
+Traceback (most recent call last):
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\main.py", line 2, in <module>
+    from FloorplanToBlenderLib import (
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\dialog.py", line 1, in <module>
+    from pyfiglet import Figlet
+ModuleNotFoundError: No module named 'pyfiglet'
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>pip install pyfiglet
+Collecting pyfiglet
+  Downloading pyfiglet-1.0.4-py3-none-any.whl.metadata (7.4 kB)
+Downloading pyfiglet-1.0.4-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 8.2 MB/s eta 0:00:00   
+Installing collected packages: pyfiglet
+Successfully installed pyfiglet-1.0.4
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py  
+🚀 Running automatic Blender project builder...
+
+----- CREATE BLENDER PROJECT FROM FLOORPLAN WITH DIALOG -----
+Welcome to this program. Please answer the questions below to progress.       
+Remember that you can change data more efficiently in the config file.        
+
+ ----- Generate  Images/Examples/example3.png  at pos  [0 0 0]  rot  [ 0  0 90]  scale  [1, 1, 1]  -----
+Created file : Data/25/transform.txt
+
+🧱 Creating Blender project...
+
+TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
+Traceback (most recent call last):
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\Blender\floorplan_to_3dObject_in_blender.py", line 447, in <module>
+    main(sys.argv)
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\Blender\floorplan_to_3dObject_in_blender.py", line 124, in main
+    create_floorplan(base_path, program_path, i)
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\Blender\floorplan_to_3dObject_in_blender.py", line 152, in create_floorplan
+    transform = read_from_file(path_to_transform_file)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\Blender\floorplan_to_3dObject_in_blender.py", line 15, in read_from_file
+    with open(file_path + ".txt", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\vaibh\\Downloads\\2d_blueprint_to_3d_model-main/Data/25/transform.txt'
+Traceback (most recent call last):
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\main.py", line 97, in <module>
+    create_blender_project(data_paths)
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\main.py", line 46, in create_blender_project
+    check_output([
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 571, in run       
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Program Files\\Blender Foundation\\Blender 4.2\\blender.exe', '-noaudio', '--background', '--python', 'Blender/floorplan_to_3dObject_in_blender.py', 'C:\\Users\\vaibh\\Downloads\\2d_blueprint_to_3d_model-main', '/Target/floorplan45.blend', 'Data/25/']' returned non-zero exit status 1.
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py  
+----- CREATE BLENDER PROJECT FROM FLOORPLAN WITH DIALOG -----
+Welcome to this program. Please answer the questions below to progress.
+Remember that you can change data more efficiently in the config file.        
+
+Please enter your blender installation path [default = C:\Program Files\Blender Foundation\Blender 4.2\blender.exe]:
+Do you want to build from StackingFile or ConfigFile list ? [default = ConfigFile]:
+Use default config or import from file paths separated by space [default = ./Configs/default.ini]:
+Do you want to set images to use in each config file? [N/y]: y
+For config file ./Configs/default.ini write path for image to use [Default=Images/Examples/example3.png]:
+
+This program is about to run and create blender3d project, continue? :        
+
+Generate datafiles in folder: Data
+
+Clean datafiles
+
+Clear all cached data before run: [default = yes] :
+ ----- Generate  Images/Examples/example3.png  at pos  [0 0 0]  rot  [ 0  0 90]  scale  [1, 1, 1]  -----
+Approximated apartment size :  949925.5
+Created file : Data/0/floor_verts.txt
+Created file : Data/0/floor_faces.txt
+Walls created :  517
+Created file : Data/0/wall_vertical_verts.txt
+Created file : Data/0/wall_vertical_faces.txt
+Created file : Data/0/wall_horizontal_verts.txt
+Created file : Data/0/wall_horizontal_faces.txt
+Number of rooms detected :  14
+Created file : Data/0/room_verts.txt
+Created file : Data/0/room_faces.txt
+Windows created :  31
+Created file : Data/0/window_vertical_verts.txt
+Created file : Data/0/window_vertical_faces.txt
+Created file : Data/0/window_horizontal_verts.txt
+Created file : Data/0/window_horizontal_faces.txt
+Doors created :  0
+Created file : Data/0/door_vertical_verts.txt
+Created file : Data/0/door_vertical_faces.txt
+Created file : Data/0/door_horizontal_verts.txt
+Created file : Data/0/door_horizontal_faces.txt
+Created file : Data/0/transform.txt
+
+Creates blender project
+
+TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
+Project created at: C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main/Target/floorplan45.blend
+
+Done, Have a nice day!
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py  
+----- CREATE BLENDER PROJECT FROM FLOORPLAN WITH DIALOG -----
+Welcome to this program. Please answer the questions below to progress.
+Remember that you can change data more efficiently in the config file.        
+
+Please enter your blender installation path [default = C:\Program Files\Blender Foundation\Blender 4.2\blender.exe]:
+Do you want to build from StackingFile or ConfigFile list ? [default = ConfigFile]:
+Use default config or import from file paths separated by space [default = ./Configs/default.ini]:
+Do you want to set images to use in each config file? [N/y]: y
+For config file ./Configs/default.ini write path for image to use [Default=Images/Examples/example3.png]:Images/Examples/example3.pngImages/Examples/h7.png 
+     
+This program is about to run and create blender3d project, continue? :        
+
+Generate datafiles in folder: Data
+
+Clean datafiles
+
+Clear all cached data before run: [default = yes] :
+ ----- Generate  Images/Examples/example3.pngImages/Examples/h7.png  at pos  [0 0 0]  rot  [ 0  0 90]  scale  [1, 1, 1]  -----
+[ WARN:0@81.405] global loadsave.cpp:248 cv::findDecoder imread_('Images/Examples/example3.pngImages/Examples/h7.png'): can't open/read file: check file path/integrity
+ERROR: Image Images/Examples/example3.pngImages/Examples/h7.png could not be read by OpenCV library.
+Traceback (most recent call last):
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\main.py", line 167, in <module>
+    data_paths = [execution.simple_single(floorplans[0])]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\execution.py", line 12, in simple_single
+    filepath, _ = generate.generate_all_files(floorplan, show)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\generate.py", line 57, in generate_all_files
+    _, gray, scale_factor = IO.read_image(floorplan.image_path, floorplan)    
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+  File "C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main\FloorplanToBlenderLib\IO.py", line 83, in read_image
+    raise IOError
+OSError
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>python main.py
+----- CREATE BLENDER PROJECT FROM FLOORPLAN WITH DIALOG -----
+Welcome to this program. Please answer the questions below to progress.
+Remember that you can change data more efficiently in the config file.        
+
+Please enter your blender installation path [default = C:\Program Files\Blender Foundation\Blender 4.2\blender.exe]:
+Do you want to build from StackingFile or ConfigFile list ? [default = ConfigFile]:
+Use default config or import from file paths separated by space [default = ./Configs/default.ini]:
+Do you want to set images to use in each config file? [N/y]: y
+For config file ./Configs/default.ini write path for image to use [Default=Images/Examples/example3.png]:Images/Examples/h7.png      
+
+This program is about to run and create blender3d project, continue? :        
+
+Generate datafiles in folder: Data
+
+Clean datafiles
+
+Clear all cached data before run: [default = yes] :
+ ----- Generate  Images/Examples/h7.png  at pos  [0 0 0]  rot  [ 0  0 90]  scale  [1, 1, 1]  -----
+WARNING: Auto rescale failed due to non good walls found in image.If rescale still is needed, please rescale manually.
+Approximated apartment size :  649281.0
+Created file : Data/0/floor_verts.txt
+Created file : Data/0/floor_faces.txt
+Walls created :  162
+Created file : Data/0/wall_vertical_verts.txt
+Created file : Data/0/wall_vertical_faces.txt
+Created file : Data/0/wall_horizontal_verts.txt
+Created file : Data/0/wall_horizontal_faces.txt
+Number of rooms detected :  7
+Created file : Data/0/room_verts.txt
+Created file : Data/0/room_faces.txt
+Windows created :  8
+Created file : Data/0/window_vertical_verts.txt
+Created file : Data/0/window_vertical_faces.txt
+Created file : Data/0/window_horizontal_verts.txt
+Created file : Data/0/window_horizontal_faces.txt
+Doors created :  1
+Created file : Data/0/door_vertical_verts.txt
+Created file : Data/0/door_vertical_faces.txt
+Created file : Data/0/door_horizontal_verts.txt
+Created file : Data/0/door_horizontal_faces.txt
+Created file : Data/0/transform.txt
+
+Creates blender project
+
+TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
+Project created at: C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main/Target/floorplan46.blend
+
+Done, Have a nice day!
+
+(venv) C:\Users\vaibh\Downloads\2d_blueprint_to_3d_model-main>  
