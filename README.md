@@ -29,8 +29,8 @@ Try our tool without installation! Visit our [Online Demo](demovideo) to see it 
 
 1. **Clone the repository**
    ```
-   git clone https://github.com/jayant1554/2d_blueprint_to_3d_model.git
-   cd 2d_blueprint_to_3d_model
+   git clone https://github.com/aryantuntune/2D_blueprint_to_3D.git
+   cd 2D_blueprint_to_3D
    ```
 
 2. **Set up the environment**
@@ -74,9 +74,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Jayant - [jayant1554@github.com](mailto:jayant1554@github.com)
-
-Project Link: [https://github.com/jayant1554/2d_blueprint_to_3d_model](https://github.com/jayant1554/2d_blueprint_to_3d_model)
+Project Link: [https://github.com/aryantuntune/2D_blueprint_to_3D](https://github.com/aryantuntune/2D_blueprint_to_3D)
 
 ---
 
