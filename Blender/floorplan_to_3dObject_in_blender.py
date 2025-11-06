@@ -136,11 +136,11 @@ def import_furniture_model(model_name, location, size, parent, cen, program_path
                 bpy.context.collection.objects.link(obj)
 
                 # Position furniture ON the floor surface
-                # The floor is at z=0, walls are 0.75 high, furniture sits on floor
-                obj.location = (x, y, 0.75)  # Place furniture at floor level
+                # The floor is at z=0, furniture should sit directly on it
+                obj.location = (x, y, 0)  # Place furniture at floor level (z=0)
 
-                # Fix rotation - furniture models are upside down
-                obj.rotation_euler[0] = math.radians(180)  # Flip 180 degrees on X-axis
+                # Rotate furniture to align with floorplan orientation
+                obj.rotation_euler[0] = math.radians(0)    # No X-axis flip
                 obj.rotation_euler[2] = math.radians(90)   # Rotate 90 degrees to align with floorplan
 
                 # Scale furniture to match the scene
