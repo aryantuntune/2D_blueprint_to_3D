@@ -141,13 +141,25 @@ def import_furniture_model(model_name, location, size, parent, cen, program_path
                 obj.location = (x, y, -1.0)  # Place furniture at floor level
 
                 # Rotate furniture to align with floorplan orientation
-                # Rotate -90 on Z-axis so furniture faces +Y direction (not -Y)
+                # Rotate +90 on Z-axis so furniture faces +Y direction
                 obj.rotation_euler[0] = math.radians(0)    # No X-axis flip
                 obj.rotation_euler[1] = math.radians(0)    # No Y-axis rotation
-                obj.rotation_euler[2] = math.radians(-90)  # Rotate -90 degrees for proper orientation
+                obj.rotation_euler[2] = math.radians(90)   # Rotate +90 degrees to face +Y direction
 
-                # Scale furniture to match the scene
-                scale_factor = 0.5  # Fixed scale - makes furniture visible and proportional
+                # Intelligent scaling based on detected furniture size
+                # Size is in pixels from the blueprint detection
+                width = size[0]
+                height = size[1]
+                avg_size = (width + height) / 2
+
+                # Scale furniture proportionally to detected size
+                # Base scale calculation: detected size / reference size
+                # Reference: typical furniture is ~100 pixels in blueprint
+                base_scale = avg_size / 100.0
+
+                # Clamp scale to reasonable range (0.3 to 1.5)
+                scale_factor = max(0.3, min(1.5, base_scale))
+
                 obj.scale = (scale_factor, scale_factor, scale_factor)
 
                 # Set parent
