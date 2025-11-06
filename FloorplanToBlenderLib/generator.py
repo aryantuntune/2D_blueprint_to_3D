@@ -716,3 +716,135 @@ class KitchenItem(Generator):
         IO.save_to_file(self.path + const.KITCHEN_FACES, faces, info)
 
         return verts
+
+
+class Toilet(Generator):
+    """Generator for toilets"""
+
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+        self.image_path = image_path
+        self.scale_factor = scale_factor
+        super().__init__(gray, path, scale, info)
+
+    def generate(self, gray, info=False):
+        """Generate 3D toilet models"""
+        toilet_data = detect.toilets(self.image_path, self.scale_factor)
+
+        if not toilet_data:
+            print("Toilets created : ", 0)
+            IO.save_to_file(self.path + const.TOILET_VERTS, [], info)
+            IO.save_to_file(self.path + const.TOILET_FACES, [], info)
+            return []
+
+        print("Toilets created : ", len(toilet_data))
+
+        verts = []
+        faces = []
+
+        for i, (x, y, w, h) in enumerate(toilet_data):
+            # Convert 2D coordinates to 3D
+            x_3d = x / const.PIXEL_TO_3D_SCALE
+            y_3d = y / const.PIXEL_TO_3D_SCALE
+            w_3d = w / const.PIXEL_TO_3D_SCALE
+            h_3d = h / const.PIXEL_TO_3D_SCALE
+
+            # Create simple box for toilet
+            base_idx = len(verts)
+            toilet_height = 40  # Toilets are low
+
+            # Bottom vertices
+            verts.extend([
+                [x_3d, y_3d, 0],
+                [x_3d + w_3d, y_3d, 0],
+                [x_3d + w_3d, y_3d + h_3d, 0],
+                [x_3d, y_3d + h_3d, 0]
+            ])
+
+            # Top vertices
+            verts.extend([
+                [x_3d, y_3d, toilet_height],
+                [x_3d + w_3d, y_3d, toilet_height],
+                [x_3d + w_3d, y_3d + h_3d, toilet_height],
+                [x_3d, y_3d + h_3d, toilet_height]
+            ])
+
+            # Create faces
+            faces.extend([
+                [base_idx, base_idx + 1, base_idx + 2, base_idx + 3],
+                [base_idx + 4, base_idx + 5, base_idx + 6, base_idx + 7],
+                [base_idx, base_idx + 1, base_idx + 5, base_idx + 4],
+                [base_idx + 1, base_idx + 2, base_idx + 6, base_idx + 5],
+                [base_idx + 2, base_idx + 3, base_idx + 7, base_idx + 6],
+                [base_idx + 3, base_idx, base_idx + 4, base_idx + 7]
+            ])
+
+        IO.save_to_file(self.path + const.TOILET_VERTS, verts, info)
+        IO.save_to_file(self.path + const.TOILET_FACES, faces, info)
+
+        return verts
+
+
+class Bathtub(Generator):
+    """Generator for bathtubs"""
+
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+        self.image_path = image_path
+        self.scale_factor = scale_factor
+        super().__init__(gray, path, scale, info)
+
+    def generate(self, gray, info=False):
+        """Generate 3D bathtub models"""
+        bathtub_data = detect.bathtubs(self.image_path, self.scale_factor)
+
+        if not bathtub_data:
+            print("Bathtubs created : ", 0)
+            IO.save_to_file(self.path + const.BATHTUB_VERTS, [], info)
+            IO.save_to_file(self.path + const.BATHTUB_FACES, [], info)
+            return []
+
+        print("Bathtubs created : ", len(bathtub_data))
+
+        verts = []
+        faces = []
+
+        for i, (x, y, w, h) in enumerate(bathtub_data):
+            # Convert 2D coordinates to 3D
+            x_3d = x / const.PIXEL_TO_3D_SCALE
+            y_3d = y / const.PIXEL_TO_3D_SCALE
+            w_3d = w / const.PIXEL_TO_3D_SCALE
+            h_3d = h / const.PIXEL_TO_3D_SCALE
+
+            # Create simple box for bathtub
+            base_idx = len(verts)
+            bathtub_height = 50  # Bathtubs are medium height
+
+            # Bottom vertices
+            verts.extend([
+                [x_3d, y_3d, 0],
+                [x_3d + w_3d, y_3d, 0],
+                [x_3d + w_3d, y_3d + h_3d, 0],
+                [x_3d, y_3d + h_3d, 0]
+            ])
+
+            # Top vertices
+            verts.extend([
+                [x_3d, y_3d, bathtub_height],
+                [x_3d + w_3d, y_3d, bathtub_height],
+                [x_3d + w_3d, y_3d + h_3d, bathtub_height],
+                [x_3d, y_3d + h_3d, bathtub_height]
+            ])
+
+            # Create faces
+            faces.extend([
+                [base_idx, base_idx + 1, base_idx + 2, base_idx + 3],
+                [base_idx + 4, base_idx + 5, base_idx + 6, base_idx + 7],
+                [base_idx, base_idx + 1, base_idx + 5, base_idx + 4],
+                [base_idx + 1, base_idx + 2, base_idx + 6, base_idx + 5],
+                [base_idx + 2, base_idx + 3, base_idx + 7, base_idx + 6],
+                [base_idx + 3, base_idx, base_idx + 4, base_idx + 7]
+            ])
+
+        IO.save_to_file(self.path + const.BATHTUB_VERTS, verts, info)
+        IO.save_to_file(self.path + const.BATHTUB_FACES, faces, info)
+
+        return verts

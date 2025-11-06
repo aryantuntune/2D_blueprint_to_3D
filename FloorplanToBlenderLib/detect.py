@@ -357,6 +357,46 @@ def kitchen_items(image_path, scale_factor):
     return kitchen_list
 
 
+def toilets(image_path, scale_factor):
+    """Detect toilets in the floorplan using contour detection"""
+    gray = cv2.cvtColor(cv2.imread(image_path), cv2.COLOR_BGR2GRAY)
+    gray = cv2.resize(gray, (0, 0), fx=scale_factor, fy=scale_factor)
+    _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    contours, _ = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+
+    toilet_list = []
+    for contour in contours:
+        x, y, w, h = cv2.boundingRect(contour)
+        area = w * h
+        aspect_ratio = float(w) / h if h > 0 else 0
+
+        # Toilet: small-medium, roughly square to slightly rectangular
+        if 2000 < area < 8000 and 0.7 < aspect_ratio < 1.4:
+            toilet_list.append((x, y, w, h))
+
+    return toilet_list
+
+
+def bathtubs(image_path, scale_factor):
+    """Detect bathtubs in the floorplan using contour detection"""
+    gray = cv2.cvtColor(cv2.imread(image_path), cv2.COLOR_BGR2GRAY)
+    gray = cv2.resize(gray, (0, 0), fx=scale_factor, fy=scale_factor)
+    _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    contours, _ = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+
+    bathtub_list = []
+    for contour in contours:
+        x, y, w, h = cv2.boundingRect(contour)
+        area = w * h
+        aspect_ratio = float(w) / h if h > 0 else 0
+
+        # Bathtub: larger, very rectangular (longer than wide)
+        if 8000 < area < 25000 and 1.5 < aspect_ratio < 3.5:
+            bathtub_list.append((x, y, w, h))
+
+    return bathtub_list
+
+
 def feature_match(img1, img2):
     """
     Feature match models to floorplans in order to distinguish doors from windows.
