@@ -135,19 +135,78 @@ def import_furniture_model(model_name, location, size, parent, cen, program_path
             if obj is not None:
                 bpy.context.collection.objects.link(obj)
 
-                # Intelligent scaling based on detected furniture size FIRST
-                # Size is in pixels from the blueprint detection
+                # INTELLIGENT SCALING ENGINE - Type-specific furniture scaling
+                # Get detected size from blueprint
                 width = size[0]
                 height = size[1]
-                avg_size = (width + height) / 2
+                detected_size = (width + height) / 2
 
-                # Scale furniture proportionally to detected size
-                # Base scale calculation: detected size / reference size
-                # Reference: typical furniture is ~50 pixels in blueprint
-                base_scale = avg_size / 50.0
+                # Define realistic furniture sizes in blueprint pixels
+                # These are based on typical real-world furniture dimensions
+                furniture_scale_profiles = {
+                    'table': {
+                        'reference_size': 80,  # Tables are medium-sized
+                        'base_scale': 0.25,    # Base scale multiplier
+                        'min_scale': 0.15,     # Minimum allowed scale
+                        'max_scale': 0.35      # Maximum allowed scale
+                    },
+                    'chair': {
+                        'reference_size': 40,  # Chairs are small
+                        'base_scale': 0.2,
+                        'min_scale': 0.12,
+                        'max_scale': 0.28
+                    },
+                    'bed': {
+                        'reference_size': 120, # Beds are large
+                        'base_scale': 0.3,
+                        'min_scale': 0.22,
+                        'max_scale': 0.42
+                    },
+                    'sofa': {
+                        'reference_size': 100, # Sofas are large
+                        'base_scale': 0.28,
+                        'min_scale': 0.2,
+                        'max_scale': 0.38
+                    },
+                    'toilet': {
+                        'reference_size': 50,  # Toilets are small-medium
+                        'base_scale': 0.18,
+                        'min_scale': 0.12,
+                        'max_scale': 0.25
+                    },
+                    'bathtub': {
+                        'reference_size': 90,  # Bathtubs are medium-large
+                        'base_scale': 0.25,
+                        'min_scale': 0.18,
+                        'max_scale': 0.35
+                    }
+                }
 
-                # Clamp scale to reasonable range (0.4 to 2.0)
-                scale_factor = max(0.4, min(2.0, base_scale))
+                # Get scaling profile for this furniture type
+                if model_name in furniture_scale_profiles:
+                    profile = furniture_scale_profiles[model_name]
+                    reference_size = profile['reference_size']
+                    base_scale = profile['base_scale']
+                    min_scale = profile['min_scale']
+                    max_scale = profile['max_scale']
+
+                    # Calculate scale based on detected size relative to reference
+                    size_ratio = detected_size / reference_size
+
+                    # Apply intelligent scaling with dampening
+                    # Use logarithmic scaling to prevent extreme sizes
+                    import math as m
+                    dampened_ratio = 1.0 + (m.log(size_ratio) * 0.3) if size_ratio > 0 else 1.0
+
+                    scale_factor = base_scale * dampened_ratio
+
+                    # Clamp to furniture-specific bounds
+                    scale_factor = max(min_scale, min(max_scale, scale_factor))
+                else:
+                    # Fallback for unknown furniture types
+                    scale_factor = 0.25
+
+                print(f"Furniture: {model_name}, Detected size: {detected_size:.1f}px, Scale: {scale_factor:.3f}")
 
                 obj.scale = (scale_factor, scale_factor, scale_factor)
 
