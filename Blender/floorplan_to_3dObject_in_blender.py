@@ -211,10 +211,11 @@ def import_furniture_model(model_name, location, size, parent, cen, program_path
                 obj.scale = (scale_factor, scale_factor, scale_factor)
 
                 # Rotate furniture to align with floorplan orientation
-                # Rotate +90 on Z-axis so furniture faces +Y direction
-                obj.rotation_euler[0] = math.radians(0)    # No X-axis flip
+                # Flip 180 degrees on X-axis to make furniture right-side up
+                # Then rotate 90 degrees on Z-axis to align with floorplan
+                obj.rotation_euler[0] = math.radians(180)  # Flip 180 degrees on X-axis (upside down -> right-side up)
                 obj.rotation_euler[1] = math.radians(0)    # No Y-axis rotation
-                obj.rotation_euler[2] = math.radians(90)   # Rotate +90 degrees to face +Y direction
+                obj.rotation_euler[2] = math.radians(90)   # Rotate 90 degrees to align with floorplan
 
                 # Position furniture ON the floor surface
                 # The floor surface is at the bottom of walls (Z = -1.0)
