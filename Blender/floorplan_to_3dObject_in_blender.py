@@ -218,15 +218,15 @@ def import_furniture_model(model_name, location, size, parent, cen, program_path
                 obj.rotation_euler[2] = math.radians(90)   # Rotate 90 degrees to align with floorplan
 
                 # Position furniture ON the floor surface
-                # The floor surface is at the bottom of walls (Z = -1.0)
+                # The floor (rooms) is at Z ≈ 0, place furniture there
                 # Get the mesh's local Z bounds to place it correctly
                 if obj.data and obj.data.vertices:
                     z_min = min([v.co.z for v in obj.data.vertices])
                     # Offset to compensate for mesh origin - place bottom at floor level
                     z_offset = -z_min  # This lifts the furniture so its bottom is at object origin
-                    obj.location = (x, y, -1.0 + z_offset)  # Place furniture at floor level
+                    obj.location = (x, y, 0 + z_offset)  # Place furniture at floor level (Z=0)
                 else:
-                    obj.location = (x, y, -1.0)
+                    obj.location = (x, y, 0)
 
                 # Set parent
                 obj.parent = parent
