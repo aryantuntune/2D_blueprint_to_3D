@@ -135,18 +135,7 @@ def import_furniture_model(model_name, location, size, parent, cen, program_path
             if obj is not None:
                 bpy.context.collection.objects.link(obj)
 
-                # Position furniture ON the floor surface
-                # The floor surface is at the bottom of walls (Z = -1.0)
-                # Place furniture so its bottom sits on the floor
-                obj.location = (x, y, -1.0)  # Place furniture at floor level
-
-                # Rotate furniture to align with floorplan orientation
-                # Rotate +90 on Z-axis so furniture faces +Y direction
-                obj.rotation_euler[0] = math.radians(0)    # No X-axis flip
-                obj.rotation_euler[1] = math.radians(0)    # No Y-axis rotation
-                obj.rotation_euler[2] = math.radians(90)   # Rotate +90 degrees to face +Y direction
-
-                # Intelligent scaling based on detected furniture size
+                # Intelligent scaling based on detected furniture size FIRST
                 # Size is in pixels from the blueprint detection
                 width = size[0]
                 height = size[1]
@@ -154,13 +143,30 @@ def import_furniture_model(model_name, location, size, parent, cen, program_path
 
                 # Scale furniture proportionally to detected size
                 # Base scale calculation: detected size / reference size
-                # Reference: typical furniture is ~100 pixels in blueprint
-                base_scale = avg_size / 100.0
+                # Reference: typical furniture is ~50 pixels in blueprint
+                base_scale = avg_size / 50.0
 
-                # Clamp scale to reasonable range (0.3 to 1.5)
-                scale_factor = max(0.3, min(1.5, base_scale))
+                # Clamp scale to reasonable range (0.4 to 2.0)
+                scale_factor = max(0.4, min(2.0, base_scale))
 
                 obj.scale = (scale_factor, scale_factor, scale_factor)
+
+                # Rotate furniture to align with floorplan orientation
+                # Rotate +90 on Z-axis so furniture faces +Y direction
+                obj.rotation_euler[0] = math.radians(0)    # No X-axis flip
+                obj.rotation_euler[1] = math.radians(0)    # No Y-axis rotation
+                obj.rotation_euler[2] = math.radians(90)   # Rotate +90 degrees to face +Y direction
+
+                # Position furniture ON the floor surface
+                # The floor surface is at the bottom of walls (Z = -1.0)
+                # Get the mesh's local Z bounds to place it correctly
+                if obj.data and obj.data.vertices:
+                    z_min = min([v.co.z for v in obj.data.vertices])
+                    # Offset to compensate for mesh origin - place bottom at floor level
+                    z_offset = -z_min  # This lifts the furniture so its bottom is at object origin
+                    obj.location = (x, y, -1.0 + z_offset)  # Place furniture at floor level
+                else:
+                    obj.location = (x, y, -1.0)
 
                 # Set parent
                 obj.parent = parent

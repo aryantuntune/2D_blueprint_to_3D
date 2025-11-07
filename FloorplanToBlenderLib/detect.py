@@ -328,8 +328,8 @@ def sofas(image_path, scale_factor):
         area = w * h
         aspect_ratio = float(w) / h if h > 0 else 0
 
-        # Sofa: medium-large, rectangular (longer than wide usually) - STRICT
-        if 10000 < area < 35000 and 1.5 < aspect_ratio < 3.5:
+        # Sofa: medium-large, rectangular (longer than wide usually) - More lenient thresholds
+        if 6000 < area < 40000 and 1.3 < aspect_ratio < 4.0:
             sofas_list.append((x, y, w, h))
 
     return sofas_list
