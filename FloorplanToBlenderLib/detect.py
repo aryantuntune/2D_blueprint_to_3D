@@ -397,6 +397,74 @@ def bathtubs(image_path, scale_factor):
     return bathtub_list
 
 
+def check_overlap(rect1, rect2, threshold=0.3):
+    """
+    Check if two rectangles overlap significantly
+    @param rect1: (x, y, w, h) tuple for first rectangle
+    @param rect2: (x, y, w, h) tuple for second rectangle
+    @param threshold: Minimum overlap ratio to consider as collision (0-1)
+    @return: True if rectangles overlap more than threshold
+    """
+    x1, y1, w1, h1 = rect1
+    x2, y2, w2, h2 = rect2
+
+    # Calculate overlap area
+    x_overlap = max(0, min(x1 + w1, x2 + w2) - max(x1, x2))
+    y_overlap = max(0, min(y1 + h1, y2 + h2) - max(y1, y2))
+    overlap_area = x_overlap * y_overlap
+
+    # Calculate smaller rectangle area
+    area1 = w1 * h1
+    area2 = w2 * h2
+    smaller_area = min(area1, area2)
+
+    # Check if overlap exceeds threshold
+    if smaller_area == 0:
+        return False
+
+    overlap_ratio = overlap_area / smaller_area
+    return overlap_ratio > threshold
+
+
+def remove_furniture_overlaps(furniture_dict):
+    """
+    Remove overlapping furniture detections with priority system
+    Priority order: beds > sofas > tables > bathtubs > chairs > toilets > kitchen
+
+    @param furniture_dict: Dictionary with keys like 'beds', 'tables', etc.
+                          Each value is a list of (x, y, w, h) tuples
+    @return: Filtered furniture dictionary with overlaps removed
+    """
+    # Define priority order (higher priority furniture is kept over lower)
+    priority_order = ['beds', 'sofas', 'tables', 'bathtubs', 'chairs', 'toilets', 'kitchen']
+
+    # Create result dictionary
+    filtered = {key: [] for key in furniture_dict.keys()}
+
+    # Track all occupied positions
+    occupied = []
+
+    # Process furniture in priority order
+    for furniture_type in priority_order:
+        if furniture_type not in furniture_dict:
+            continue
+
+        for rect in furniture_dict[furniture_type]:
+            # Check if this position overlaps with any already placed furniture
+            is_overlapping = False
+            for occupied_rect in occupied:
+                if check_overlap(rect, occupied_rect, threshold=0.3):
+                    is_overlapping = True
+                    break
+
+            # Only add if not overlapping
+            if not is_overlapping:
+                filtered[furniture_type].append(rect)
+                occupied.append(rect)
+
+    return filtered
+
+
 def feature_match(img1, img2):
     """
     Feature match models to floorplans in order to distinguish doors from windows.

@@ -79,27 +79,50 @@ def generate_all_files(
         if floorplan.doors:
             Door(gray, path, floorplan.image_path, scale_factor, scale, info)
 
-        # Generate furniture if enabled
+        # Generate furniture with collision detection
+        # First, detect all furniture types
+        from FloorplanToBlenderLib import detect as furniture_detect
+
+        furniture_raw = {}
         if hasattr(floorplan, 'tables') and floorplan.tables:
-            Table(gray, path, floorplan.image_path, scale_factor, scale, info)
-
+            furniture_raw['tables'] = furniture_detect.tables(floorplan.image_path, scale_factor)
         if hasattr(floorplan, 'beds') and floorplan.beds:
-            Bed(gray, path, floorplan.image_path, scale_factor, scale, info)
-
+            furniture_raw['beds'] = furniture_detect.beds(floorplan.image_path, scale_factor)
         if hasattr(floorplan, 'chairs') and floorplan.chairs:
-            Chair(gray, path, floorplan.image_path, scale_factor, scale, info)
-
+            furniture_raw['chairs'] = furniture_detect.chairs(floorplan.image_path, scale_factor)
         if hasattr(floorplan, 'sofas') and floorplan.sofas:
-            Sofa(gray, path, floorplan.image_path, scale_factor, scale, info)
-
+            furniture_raw['sofas'] = furniture_detect.sofas(floorplan.image_path, scale_factor)
         if hasattr(floorplan, 'kitchen') and floorplan.kitchen:
-            KitchenItem(gray, path, floorplan.image_path, scale_factor, scale, info)
-
+            furniture_raw['kitchen'] = furniture_detect.kitchen_items(floorplan.image_path, scale_factor)
         if hasattr(floorplan, 'toilets') and floorplan.toilets:
-            Toilet(gray, path, floorplan.image_path, scale_factor, scale, info)
-
+            furniture_raw['toilets'] = furniture_detect.toilets(floorplan.image_path, scale_factor)
         if hasattr(floorplan, 'bathtubs') and floorplan.bathtubs:
-            Bathtub(gray, path, floorplan.image_path, scale_factor, scale, info)
+            furniture_raw['bathtubs'] = furniture_detect.bathtubs(floorplan.image_path, scale_factor)
+
+        # Apply overlap removal filter
+        furniture_filtered = furniture_detect.remove_furniture_overlaps(furniture_raw)
+
+        # Now generate furniture using filtered data
+        if 'tables' in furniture_filtered:
+            Table(gray, path, floorplan.image_path, scale_factor, scale, info, furniture_filtered['tables'])
+
+        if 'beds' in furniture_filtered:
+            Bed(gray, path, floorplan.image_path, scale_factor, scale, info, furniture_filtered['beds'])
+
+        if 'chairs' in furniture_filtered:
+            Chair(gray, path, floorplan.image_path, scale_factor, scale, info, furniture_filtered['chairs'])
+
+        if 'sofas' in furniture_filtered:
+            Sofa(gray, path, floorplan.image_path, scale_factor, scale, info, furniture_filtered['sofas'])
+
+        if 'kitchen' in furniture_filtered:
+            KitchenItem(gray, path, floorplan.image_path, scale_factor, scale, info, furniture_filtered['kitchen'])
+
+        if 'toilets' in furniture_filtered:
+            Toilet(gray, path, floorplan.image_path, scale_factor, scale, info, furniture_filtered['toilets'])
+
+        if 'bathtubs' in furniture_filtered:
+            Bathtub(gray, path, floorplan.image_path, scale_factor, scale, info, furniture_filtered['bathtubs'])
 
     generate_transform_file(
         floorplan.image_path,

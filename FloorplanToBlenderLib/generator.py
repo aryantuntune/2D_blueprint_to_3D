@@ -391,14 +391,19 @@ class Window(Generator):
 class Table(Generator):
     """Generator for tables"""
 
-    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False, pre_detected_data=None):
         self.image_path = image_path
         self.scale_factor = scale_factor
+        self.pre_detected_data = pre_detected_data
         super().__init__(gray, path, scale, info)
 
     def generate(self, gray, info=False):
         """Generate 3D table models"""
-        tables_data = detect.tables(self.image_path, self.scale_factor)
+        # Use pre-detected data if available, otherwise detect
+        if self.pre_detected_data is not None:
+            tables_data = self.pre_detected_data
+        else:
+            tables_data = detect.tables(self.image_path, self.scale_factor)
 
         if not tables_data:
             print("Tables created : ", 0)
@@ -457,9 +462,10 @@ class Table(Generator):
 class Bed(Generator):
     """Generator for beds"""
 
-    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False, pre_detected_data=None):
         self.image_path = image_path
         self.scale_factor = scale_factor
+        self.pre_detected_data = pre_detected_data
         super().__init__(gray, path, scale, info)
 
     def generate(self, gray, info=False):
@@ -523,9 +529,10 @@ class Bed(Generator):
 class Chair(Generator):
     """Generator for chairs"""
 
-    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False, pre_detected_data=None):
         self.image_path = image_path
         self.scale_factor = scale_factor
+        self.pre_detected_data = pre_detected_data
         super().__init__(gray, path, scale, info)
 
     def generate(self, gray, info=False):
@@ -589,9 +596,10 @@ class Chair(Generator):
 class Sofa(Generator):
     """Generator for sofas"""
 
-    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False, pre_detected_data=None):
         self.image_path = image_path
         self.scale_factor = scale_factor
+        self.pre_detected_data = pre_detected_data
         super().__init__(gray, path, scale, info)
 
     def generate(self, gray, info=False):
@@ -655,9 +663,10 @@ class Sofa(Generator):
 class KitchenItem(Generator):
     """Generator for kitchen items (stove, sink, etc)"""
 
-    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False, pre_detected_data=None):
         self.image_path = image_path
         self.scale_factor = scale_factor
+        self.pre_detected_data = pre_detected_data
         super().__init__(gray, path, scale, info)
 
     def generate(self, gray, info=False):
@@ -721,9 +730,10 @@ class KitchenItem(Generator):
 class Toilet(Generator):
     """Generator for toilets"""
 
-    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False, pre_detected_data=None):
         self.image_path = image_path
         self.scale_factor = scale_factor
+        self.pre_detected_data = pre_detected_data
         super().__init__(gray, path, scale, info)
 
     def generate(self, gray, info=False):
@@ -787,9 +797,10 @@ class Toilet(Generator):
 class Bathtub(Generator):
     """Generator for bathtubs"""
 
-    def __init__(self, gray, path, image_path, scale_factor, scale, info=False):
+    def __init__(self, gray, path, image_path, scale_factor, scale, info=False, pre_detected_data=None):
         self.image_path = image_path
         self.scale_factor = scale_factor
+        self.pre_detected_data = pre_detected_data
         super().__init__(gray, path, scale, info)
 
     def generate(self, gray, info=False):
