@@ -470,7 +470,7 @@ class Bed(Generator):
 
     def generate(self, gray, info=False):
         """Generate 3D bed models"""
-        beds_data = detect.beds(self.image_path, self.scale_factor)
+        beds_data = self.pre_detected_data if self.pre_detected_data is not None else detect.beds(self.image_path, self.scale_factor)
 
         if not beds_data:
             print("Beds created : ", 0)
@@ -537,7 +537,7 @@ class Chair(Generator):
 
     def generate(self, gray, info=False):
         """Generate 3D chair models"""
-        chairs_data = detect.chairs(self.image_path, self.scale_factor)
+        chairs_data = self.pre_detected_data if self.pre_detected_data is not None else detect.chairs(self.image_path, self.scale_factor)
 
         if not chairs_data:
             print("Chairs created : ", 0)
@@ -604,7 +604,7 @@ class Sofa(Generator):
 
     def generate(self, gray, info=False):
         """Generate 3D sofa models"""
-        sofas_data = detect.sofas(self.image_path, self.scale_factor)
+        sofas_data = self.pre_detected_data if self.pre_detected_data is not None else detect.sofas(self.image_path, self.scale_factor)
 
         if not sofas_data:
             print("Sofas created : ", 0)
@@ -671,7 +671,7 @@ class KitchenItem(Generator):
 
     def generate(self, gray, info=False):
         """Generate 3D kitchen item models"""
-        kitchen_data = detect.kitchen_items(self.image_path, self.scale_factor)
+        kitchen_data = self.pre_detected_data if self.pre_detected_data is not None else detect.kitchen_items(self.image_path, self.scale_factor)
 
         if not kitchen_data:
             print("Kitchen items created : ", 0)
@@ -738,7 +738,7 @@ class Toilet(Generator):
 
     def generate(self, gray, info=False):
         """Generate 3D toilet models"""
-        toilet_data = detect.toilets(self.image_path, self.scale_factor)
+        toilet_data = self.pre_detected_data if self.pre_detected_data is not None else detect.toilets(self.image_path, self.scale_factor)
 
         if not toilet_data:
             print("Toilets created : ", 0)
@@ -805,7 +805,7 @@ class Bathtub(Generator):
 
     def generate(self, gray, info=False):
         """Generate 3D bathtub models"""
-        bathtub_data = detect.bathtubs(self.image_path, self.scale_factor)
+        bathtub_data = self.pre_detected_data if self.pre_detected_data is not None else detect.bathtubs(self.image_path, self.scale_factor)
 
         if not bathtub_data:
             print("Bathtubs created : ", 0)
