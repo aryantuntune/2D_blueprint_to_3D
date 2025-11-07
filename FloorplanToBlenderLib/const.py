@@ -149,6 +149,8 @@ STR_BEDS = "beds"
 STR_CHAIRS = "chairs"
 STR_SOFAS = "sofas"
 STR_KITCHEN = "kitchen"
+STR_TOILETS = "toilets"
+STR_BATHTUBS = "bathtubs"
 
 STR_REMOVE_NOISE = "remove_noise"
 STR_RESCALE_IMAGE = "rescale_image"

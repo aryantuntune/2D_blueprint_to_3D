@@ -3,7 +3,7 @@ from . import const
 from . import transform
 import numpy as np
 
-from FloorplanToBlenderLib.generator import Door, Floor, Room, Wall, Window, Table, Bed, Chair, Sofa, KitchenItem
+from FloorplanToBlenderLib.generator import Door, Floor, Room, Wall, Window, Table, Bed, Chair, Sofa, KitchenItem, Toilet, Bathtub
 
 def generate_all_files(
     floorplan,
@@ -94,6 +94,12 @@ def generate_all_files(
 
         if hasattr(floorplan, 'kitchen') and floorplan.kitchen:
             KitchenItem(gray, path, floorplan.image_path, scale_factor, scale, info)
+
+        if hasattr(floorplan, 'toilets') and floorplan.toilets:
+            Toilet(gray, path, floorplan.image_path, scale_factor, scale, info)
+
+        if hasattr(floorplan, 'bathtubs') and floorplan.bathtubs:
+            Bathtub(gray, path, floorplan.image_path, scale_factor, scale, info)
 
     generate_transform_file(
         floorplan.image_path,

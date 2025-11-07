@@ -232,6 +232,16 @@ def create_kitchen_item_3d(location, size, parent, cen):
     counter.parent = parent
 
 
+def create_toilet_3d(location, size, parent, cen):
+    """Import toilet model"""
+    import_furniture_model("toilet", location, size, parent, cen, _program_path)
+
+
+def create_bathtub_3d(location, size, parent, cen):
+    """Import bathtub model"""
+    import_furniture_model("bathtub", location, size, parent, cen, _program_path)
+
+
 """
 Main functionality here!
 """
@@ -694,6 +704,56 @@ def create_floorplan(base_path, program_path, name=None):
                     width = max(x_coords) - min(x_coords)
                     height = max(y_coords) - min(y_coords)
                     create_kitchen_item_3d([x_center, y_center], [width, height], furniture_parent, cen)
+
+            furniture_parent.parent = parent
+
+    # Toilets
+    path_to_toilet_verts_file = program_path + "/" + path_to_data + "toilet_verts"
+    path_to_toilet_faces_file = program_path + "/" + path_to_data + "toilet_faces"
+
+    if os.path.isfile(path_to_toilet_verts_file + ".txt") and os.path.isfile(path_to_toilet_faces_file + ".txt"):
+        verts = read_from_file(path_to_toilet_verts_file)
+        faces = read_from_file(path_to_toilet_faces_file)
+
+        if len(verts) > 0 and len(faces) > 0:
+            furniture_parent, _ = init_object("Toilets")
+
+            # Each toilet is represented by 8 vertices (a box)
+            for i in range(0, len(verts), 8):
+                if i + 7 < len(verts):
+                    toilet_verts = verts[i:i+8]
+                    x_coords = [v[0] for v in toilet_verts]
+                    y_coords = [v[1] for v in toilet_verts]
+                    x_center = sum(x_coords) / len(x_coords)
+                    y_center = sum(y_coords) / len(y_coords)
+                    width = max(x_coords) - min(x_coords)
+                    height = max(y_coords) - min(y_coords)
+                    create_toilet_3d([x_center, y_center], [width, height], furniture_parent, cen)
+
+            furniture_parent.parent = parent
+
+    # Bathtubs
+    path_to_bathtub_verts_file = program_path + "/" + path_to_data + "bathtub_verts"
+    path_to_bathtub_faces_file = program_path + "/" + path_to_data + "bathtub_faces"
+
+    if os.path.isfile(path_to_bathtub_verts_file + ".txt") and os.path.isfile(path_to_bathtub_faces_file + ".txt"):
+        verts = read_from_file(path_to_bathtub_verts_file)
+        faces = read_from_file(path_to_bathtub_faces_file)
+
+        if len(verts) > 0 and len(faces) > 0:
+            furniture_parent, _ = init_object("Bathtubs")
+
+            # Each bathtub is represented by 8 vertices (a box)
+            for i in range(0, len(verts), 8):
+                if i + 7 < len(verts):
+                    bathtub_verts = verts[i:i+8]
+                    x_coords = [v[0] for v in bathtub_verts]
+                    y_coords = [v[1] for v in bathtub_verts]
+                    x_center = sum(x_coords) / len(x_coords)
+                    y_center = sum(y_coords) / len(y_coords)
+                    width = max(x_coords) - min(x_coords)
+                    height = max(y_coords) - min(y_coords)
+                    create_bathtub_3d([x_center, y_center], [width, height], furniture_parent, cen)
 
             furniture_parent.parent = parent
 
